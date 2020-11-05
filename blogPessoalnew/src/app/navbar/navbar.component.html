@@ -8,17 +8,30 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
+              routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/feed'>Feed</a>
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
+              routerLink='/feed'>Feed</a>
             </li>
+
+            <div ngif*='auth.btnLogin()'>
+              <li class="nav-item">
+                <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+              </li>
+            </div>
+            <div ngif*='auth.btnLogin()'>
             <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/cadastrar'>Cadastrar</a>
             </li>
+          </div>
+          <div ngif*='auth.btnSair()'>
             <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/cadastro'>Cadastro</a>
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3"
+              (click)='sair'>Sair</a>
             </li>
+          </div>
           </ul>
         </div>
       </nav>
