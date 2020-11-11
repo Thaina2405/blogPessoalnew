@@ -16,22 +16,27 @@
               routerLink='/feed'>Feed</a>
             </li>
 
-            <div ngif*='auth.btnLogin()'>
+            
+            <div *ngIf='auth.btnLogin()'>
               <li class="nav-item">
-                <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+                <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
+                routerLink='/login'>login</a>
               </li>
             </div>
-            <div ngif*='auth.btnLogin()'>
-            <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/cadastrar'>Cadastrar</a>
-            </li>
-          </div>
-          <div ngif*='auth.btnSair()'>
-            <li class="nav-item">
-              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3"
-              (click)='sair'>Sair</a>
-            </li>
-          </div>
+
+            <div *ngIf='auth.btnLogin()'>
+              <li class="nav-item">
+                <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
+                routerLink='/cadastro'>Cadastro</a>
+              </li>
+            </div>
+
+            <div *ngIf='auth.btnSair()'>
+              <li class="nav-item">
+                <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
+               (click)='sair()'>Sair</a>
+              </li>
+            </div>
           </ul>
         </div>
       </nav>

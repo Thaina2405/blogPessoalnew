@@ -10,12 +10,16 @@ import { AuthService } from '../service/auth.service';
 export class CadastroComponent implements OnInit {
   user: User = new User();
   senha: string;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor
+  (private authService: AuthService, 
+  private router: Router
+  ) {}
   ngOnInit() {}
   conferirSenha(event:any){
     this.senha=event.target.value
   }
-  cadastrar() {
+ 
+ cadastrar() {
     if(this.senha === this.user.senha){
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp;
