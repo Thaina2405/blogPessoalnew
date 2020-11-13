@@ -28,7 +28,12 @@ export class TemaService {
     return this.http.put('http://localhost:8081/tema', tema, this.token) 
   }
 
-  deleteTema(tema: Tema){
+  deleteTema(id: number){
     return this.http.delete('http://localhost:8081/${id}', this.token)
   }
+
+  getByNomeTema(nome: string){
+    return this.http.get(`http://localhost:8081/tema/nome/${nome}`, this.token)
+  }
 }
+
